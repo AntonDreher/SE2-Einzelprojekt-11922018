@@ -63,8 +63,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     response = inFromServer.readLine();
                     clientSocket.close();
                 }catch(IOException e){
-                    Toast.makeText(getApplicationContext(), "Failed to connect", Toast.LENGTH_LONG);
-                    e.printStackTrace();
+                    response = "Error";
                 }
             }
         });
