@@ -7,4 +7,6 @@
     <string name="senden">Senden</string>
     <string name="matrikelnummer_eingeben">Matrikelnummer eingeben</string>
     <string name="matrikelnummer_eingeben_">Matrikelnummer eingeben:</string>
+    <string name="binary">Binary</string>
+    <string name="quersumme_der_matrikelnummer_in_binary">(Quersumme der Matrikelnummer in binary)</string>
 </resources>

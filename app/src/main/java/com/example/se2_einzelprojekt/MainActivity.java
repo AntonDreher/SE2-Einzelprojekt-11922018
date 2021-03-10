@@ -18,8 +18,10 @@ import java.net.Socket;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Button   sendBtn;
+    private Button   calcBtn;
     private TextView matNrTextField;
     private TextView responseTextView;
+    private TextView calculatedTextView;
     String response;
 
     @Override
@@ -29,9 +31,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         sendBtn = (Button) findViewById(R.id.btnSend);
         sendBtn.setOnClickListener(this);
-
+        calcBtn = (Button) findViewById(R.id.btnCalculate);
+        calcBtn.setOnClickListener(this);
         matNrTextField = findViewById(R.id.matNrTextField);
         responseTextView = findViewById(R.id.responseTextView);
+        calculatedTextView = findViewById(R.id.calcOutputText);
         getResponseFromSocket();
     }
 
@@ -41,6 +45,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(v.getId() == sendBtn.getId()){
             getResponseFromSocket();
             responseTextView.setText(response);
+        }else if(v.getId() == calcBtn.getId()){
+            int checksum = getCheckSum(matNrTextField.getText().toString().trim());
+            calculatedTextView.setText(convertToBinary(checksum));
         }
     }
 
@@ -62,5 +69,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
         thread.start();
+    }
+
+    private int getCheckSum(String numberToSum){
+        int sum = 0;
+
+        for(int i=0; i<numberToSum.length(); i++){
+            sum += Character.getNumericValue(numberToSum.charAt(i));
+        }
+
+        return sum;
+    }
+
+    private String convertToBinary(int toConvert){
+        int currentValue = 0;
+        String calculated = "";
+        while(toConvert > 0){
+            currentValue = toConvert%2;
+            calculated = "" + currentValue + calculated;
+            toConvert /=2;
+        }
+        return calculated;
     }
 }
