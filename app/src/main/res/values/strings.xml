@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">SE2-Einzelprojekt</string>
+    <string name="matrikelnummer">Matrikelnummer:</string>
+    <string name="_11922018">11922018</string>
+    <string name="antwort_vom_server">Antwort vom Server:</string>
+    <string name="berechneter_wert">Berechneter Wert:</string>
+    <string name="senden">Senden</string>
+    <string name="matrikelnummer_eingeben">Matrikelnummer eingeben</string>
+    <string name="matrikelnummer_eingeben_">Matrikelnummer eingeben:</string>
 </resources>
