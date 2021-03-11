@@ -6,15 +6,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.PrintWriter;
 import java.net.Socket;
+
+/**
+ * Author: Huber Alexander
+ * MatNr: 11922018
+ * Aufgabe: Quersumme	der	Matrikelnummer	bilden	und
+ * anschließend	als	Binärzahl	darstellen
+ */
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Button   sendBtn;
