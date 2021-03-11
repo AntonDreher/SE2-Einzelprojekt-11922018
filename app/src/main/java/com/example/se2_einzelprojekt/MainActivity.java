@@ -83,10 +83,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private String convertToBinary(int toConvert){
         int currentValue = 0;
         String calculated = "";
-        while(toConvert > 0){
-            currentValue = toConvert%2;
-            calculated = "" + currentValue + calculated;
-            toConvert /=2;
+        if (toConvert != 0) {
+            while (toConvert > 0) {
+                currentValue = toConvert % 2;
+                calculated = "" + currentValue + calculated;
+                toConvert /= 2;
+            }
+        }else{
+            calculated = "0";
         }
         return calculated;
     }
